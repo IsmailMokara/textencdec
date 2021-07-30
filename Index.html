@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<p id="slider"></p>
+<!-- Mirrored from assbach.com/tools/encrypt by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jul 2021 15:04:57 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<title>Text Encryption</title>
+	<meta name="description" content="encrypt and decrypt messages for a safe and secure private conversation with friends." />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta content="Sascha Aßbach" name="author">
+	<meta content="index, follow" name="robots">
+	<link href="https://blog.assbach.de/feed/" rel="alternate" title="blog.assbach.de RSS-Feed" type="application/rss+xml">
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="fa-all.min.css"  rel="stylesheet">
+	<link href="green2018.css" rel="stylesheet"> 
+</head>
+<body>
+	<div id="bg">
+		<nav class="navbar navbar-expand-lg navbar-custom fixed-top shadow">
+			<div class="container">
+				<h1 class="text-center text-lg-left align-self-center"><a href="https://www.facebook.com/ismail.mokara/">Ismail Mokara</a></h1> 
+				<h3 class="text-center text-lg-left align-self-center">I am always with you.</h3>
+				<div class="collapse navbar-collapse" id="navbarsExample07">
+					<ul class="nav navbar-nav ml-auto ">
+						<li class="nav-item active">
+							<a class="nav-link scroll" href="https://www.facebook.com/ismail.mokara/">Contact</a>
+						</li>
+						<li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="index.html" id="dropdownTools" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other Links</a> <div class="dropdown-menu dropdown-menu-right shadow-lg" aria-labelledby="dropdownTools"> <a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item active" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a><div class="dropdown-divider"></div><a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a><a class="dropdown-item" href="#">Under Making</a> </div></li>					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-narrow">
+			<div class="row" id="tools">
+				<div class="col-md-12 firstcontainer">
+					<div class="box1 text-center">
+						<h2>Encrypt/Decrypt Text</h2>						
+
+						
+						
+						
+							<form action="https://assbach.com/tools/encrypt?" name="fe" onsubmit="process(window.a=!window.a); return false">
+
+								<textarea rows="8" cols="64" name="re" id="re" class="form-control copy" required="required"></textarea>
+
+							
+									<div class="row" >
+										<div class="col-12 col-md-5 text-md-left text-center">
+								 			<div class="form-group">
+								  				 <label for "key" class="pt-3">Your Keyword:</label>
+								  				 <input type="password" name="key" id="keyword" class="form-control" required="required" autocomplete="off">
+										 	</div>
+										</div>
+										<div class="col-md-7 text-md-right text-center pt-5">
+											<button type="button" class="btn btn-primary btn-lg" value="encrypt" id="encrypt"><i class="fas fa-lock"></i>Encrypt</button>
+									 		<button type="button" class="btn btn-primary btn-lg" value="decrypt" id="decrypt"><i class="fas fa-unlock"></i>Decrypt</button>
+									 		<button type="button" class="btn btn-primary btn-lg copy" value="copy" id="copy" data-clipboard-action="copy" data-clipboard-target="#re"><i class="fas fa-copy"></i>Copy</button>
+											<button type="reset"  class="btn btn-primary btn-lg" id="reset" value="reset"><i class="fas fa-trash-alt"></i>Clear</button>
+										</div>
+									</div>
+
+
+							</form>
+							<div class="text-left"><span id="response">&nbsp;</span></div> 
+				
+						
+						
+
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box0 mt-3">						
+						How to use:
+						<ol>
+							<li><strong>Paste or type the text</strong> you want to <em>encrypt</em> into the large input field.</li>
+							<li>Then <strong>enter a keyword</strong>.</li>
+							<li>Press the <strong>encrypt button</strong> and</li>
+							<li><strong>Copy</a> the encrypted text</strong> into an email or chat or wherever.</li>
+						</ol>
+					
+						<p>Be sure to give the keyword to the recipient so that they can decrypt the text. I suggest to use a safer way than email to deliver the keyword (chat, txt, voice maybe). To <em>decrypt</em> a text use the same way and press the decrypt button. <b>None of the data you enter is saved or even being sent to the server</b>, the encryption happens in your browser (via JavaScript).</p>
+
+						
+					</div>
+				</div>
+			</div>
+			<footer> <div class="row mt-5"> <div class="col-12 col-md-6 text-md-left text-center">You'll find me in fb & youtube as <strong> Ismail Mokara </strong></div><div class="col-12 col-md-6 text-md-right text-center"> <a href="https://www.facebook.com/ismail.mokara/" target="_blank">Me in Facebook</a> // <a href="https://www.youtube.com/channel/UCmm_EdhIRmRhHLQAfFfF1bw" target="_blank">Me in Youtube</a> // <a href="#slider">Top</a> </div></div></footer>		</div>
+			
+					
+	</div> 
+	<script src="jquery-3.3.1.min.js"></script>
+	<script src="popper.min.js"></script>
+	<script src="bootstrap.min.js"></script>
+	<script src="clipboard.min.js"></script>
+	<script src="alphac.js"></script>
+
+	<script type="text/javascript">
+	function process(on) {
+		var fe = document.fe;
+		var ke = fe.key.value;
+		var re = fe.re;
+		var f = timer(function() {
+			re.value = alphac(re.value, ke, md5(ke), on)
+		});
+
+		var t = f();
+		var d = re.value.length;
+		var r = Math.round(d / t * 1000);
+
+	}
+	</script>
+
+	<script>
+
+			$('#re').focus();
+
+			$('#re').change();
+
+			function mes(text) {
+
+				$('#response')
+					.fadeTo(300,0)
+					.delay(300)
+					.queue(function(){
+		       			$(this).html("<kbd>"+text+"</kbd>").dequeue();
+		 		    })
+		 		    .fadeTo(600,100);
+
+
+				//$('#response').html("<kbd>"+text+"</kbd>").fadeIn();
+			}
+
+			$('button#encrypt').click( function(){  
+				
+				if ($('#re').val() == "" || $('#keyword').val() == "") {
+					
+					mes("Please enter required fields marked with a red border.");
+					$('#re').focus();
+
+				} else { 
+					process(1); 
+					mes("Message encrypted! Now copy.");
+				}
+			})
+
+			$('button#decrypt').click( function(){  process(0); })
+
+			$('button#reset').click( function(){ mes("Fields cleared."); $('#re').focus();})
+
+			$('button#copy').click( function(){ 
+
+
+
+				if ($('#re').val() == "" || $('#keyword').val() == "") {
+					mes("Enter required fields");			
+				} else {
+					var clipboard = new ClipboardJS('.copy');
+					clipboard.on('success', function(e) {
+						mes("Encrypted message copied to clipboard! Make sure to share the keyword.");
+					});
+				}
+ 			})
+
+
+
+		
+
+	</script>
+	<script>var _paq=_paq || []; _paq.push(["setDocumentTitle", document.domain + "/" + document.title]); _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function(){var u="https://blog.assbach.de/piwik/"; _paq.push(['setTrackerUrl', u+'piwik.php']); _paq.push(['setSiteId', '2']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);})();</script>
+	</body>
+
+<!-- Mirrored from assbach.com/tools/encrypt by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 29 Jul 2021 15:05:11 GMT -->
+</html>
